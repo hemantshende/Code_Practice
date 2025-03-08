@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ADS/ADS.iml" filepath="$PROJECT_DIR$/ADS/ADS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Basic Code/Basic Code.iml" filepath="$PROJECT_DIR$/Basic Code/Basic Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Basic Interview Codes/Basic Interview Codes.iml" filepath="$PROJECT_DIR$/Basic Interview Codes/Basic Interview Codes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Collections/Collections.iml" filepath="$PROJECT_DIR$/Collections/Collections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Implementation/Implementation.iml" filepath="$PROJECT_DIR$/Implementation/Implementation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QuizCode/QuizCode.iml" filepath="$PROJECT_DIR$/QuizCode/QuizCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Scaler_Code/Scaler_Code.iml" filepath="$PROJECT_DIR$/Scaler_Code/Scaler_Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Scaler_coding/Scaler_coding.iml" filepath="$PROJECT_DIR$/Scaler_coding/Scaler_coding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebHashes/WebHashes.iml" filepath="$PROJECT_DIR$/WebHashes/WebHashes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WindowsLog/WindowsLog.iml" filepath="$PROJECT_DIR$/WindowsLog/WindowsLog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/abc/abc.iml" filepath="$PROJECT_DIR$/abc/abc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coding practice/coding practice.iml" filepath="$PROJECT_DIR$/coding practice/coding practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sorting/sorting.iml" filepath="$PROJECT_DIR$/sorting/sorting.iml" />
+    </modules>
+  </component>
+</project>

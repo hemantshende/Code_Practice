@@ -1,0 +1,123 @@
+
+
+## What is Singleton Pattern?
+==>
+The Singleton Pattern ensures that:
+Only one instance of a class is created.
+It provides a global access point to that instance.
+It is commonly used for logging, database connections, configuration settings, etc.
+
+## Ways to Implement Singleton in Java
+==>
+1. Eager Initialization==>
+The instance is created at the time of class loading.
+This is thread-safe but not memory efficient if the instance is never used.
+
+Code:
+class Singleton {
+    private static final Singleton INSTANCE = new Singleton(); // Eagerly created instance
+
+    private Singleton() {} // Private constructor
+
+    public static Singleton getInstance() {
+        return INSTANCE; // Returns the single instance
+    }
+}
+✅ Pros: Simple, fast, and thread-safe
+❌ Cons: Wastes memory if the instance is never used
+
+2. Lazy Initialization (Not Thread-Safe)
+The instance is created only when needed (on first use).
+Not thread-safe – multiple threads can create multiple instances.
+Code:
+class Singleton {
+    private static Singleton instance; // No instance created initially
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (instance == null) { // Creates instance only when needed
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+✅ Pros: Saves memory (instance is created only when needed)
+❌ Cons: Not thread-safe (multiple threads may create multiple instances)
+
+3. Thread-Safe Singleton (Synchronized Method)
+Uses synchronized keyword to ensure only one thread creates the instance.
+Slower performance due to synchronization overhead.
+Code:
+class Singleton {
+    private static Singleton instance; //private static
+
+    private Singleton() {}
+
+    public static synchronized Singleton getInstance() { // Synchronized method
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+✅ Pros: Thread-safe
+❌ Cons: Slow performance (synchronization overhead)
+
+4. Thread-Safe Singleton (Double-Checked Locking)
+Improves performance by synchronizing only the first time.
+Uses volatile to prevent thread caching issues.
+Code:
+class Singleton {
+    private static volatile Singleton instance;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (instance == null) {  // First check (no lock)
+            synchronized (Singleton.class) { // Lock only for first-time creation
+                if (instance == null) {  // Second check (inside synchronized block)
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+✅ Pros: Efficient and thread-safe
+❌ Cons: Slightly complex
+
+5. Bill Pugh Singleton (Best Method - Nested Class)
+Uses a static nested class to hold the instance.
+Thread-safe without synchronization.
+Instance is created only when needed.
+Code:
+class Singleton {
+    private Singleton() {
+        System.out.println("Instance created");
+    }
+
+    private static class SingletonHelper { // Static nested class
+        private static final Singleton INSTANCE = new Singleton();
+    }
+
+    public static Singleton getInstance() {
+        return SingletonHelper.INSTANCE; // Instance created only when called
+    }
+}
+✅ Pros: Thread-safe, efficient, lazy-loaded, and simple
+❌ Cons: None (this is the best approach)
+
+## Where is Singleton Used?
+==>
+✔ Database connections (JDBC, Hibernate, etc.)
+✔ Logging frameworks (Log4j, SLF4J, etc.)
+✔ Thread pools, caches, configuration settings
+✔ File handling (e.g., accessing a single configuration file)
+
+## Key Takeaways
+==>
+Make the constructor private to prevent object creation.
+Use a static method to return the instance.
+Ensure thread safety if the Singleton will be accessed by multiple threads.
+Bill Pugh Singleton is the best approach due to simplicity and efficiency.
